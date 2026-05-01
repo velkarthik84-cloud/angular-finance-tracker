@@ -1,12 +1,15 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { NavbarComponent }       from './shared/navbar/navbar';
+import { NotificationComponent } from './shared/notification/notification';
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
+  selector:    'app-root',
+  standalone:  true,
+  imports:     [RouterOutlet, NavbarComponent, NotificationComponent],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls:   ['./app.css']
 })
-export class App {
-  protected readonly title = signal('angular-finance-tracker');
+export class AppComponent {
+  title = 'angular-finance-tracker';
 }

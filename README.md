@@ -1,59 +1,173 @@
-# AngularFinanceTracker
+# Angular Finance Tracker
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.9.
+A personal finance tracking web application built using Angular.
+Assignment 4C — Deckzi Software Developer Pre-Recruitment Program — Section 4.
 
-## Development server
+---
 
-To start a local development server, run:
+## Features
 
-```bash
+* Dashboard with total income, expenses, and balance
+* Visual summary of expenses by category
+* Add, edit, and delete transactions
+* Categorize transactions (Food, Housing, etc.)
+* Reactive Forms with validation
+* Centralized error handling using HTTP interceptor
+* Local data persistence using localStorage
+* Responsive UI with modern design
+
+---
+
+## Tech Stack
+
+| Technology     | Purpose                    |
+| -------------- | -------------------------- |
+| Angular        | Frontend framework         |
+| TypeScript     | Strongly typed language    |
+| RxJS           | Reactive programming       |
+| Angular Router | Page navigation            |
+| Reactive Forms | Form handling & validation |
+| localStorage   | Data persistence           |
+
+---
+
+## Project Structure
+
+angular-finance-tracker/
+├── src/
+│   ├── app/
+│   │   ├── pages/
+│   │   │   ├── dashboard/
+│   │   │   ├── transactions/
+│   │   │   └── categories/
+│   │   ├── services/
+│   │   │   ├── transaction.ts
+│   │   │   ├── category.ts
+│   │   │   └── notification.ts
+│   │   ├── interceptors/
+│   │   │   └── error-interceptor.ts
+│   │   ├── app.routes.ts
+│   │   ├── app.config.ts
+│   │   └── app.ts
+│   ├── environments/
+│   ├── index.html
+│   └── main.ts
+├── dist/                     ← Production build output
+├── angular.json
+├── package.json
+├── tsconfig.json
+├── vercel.json               ← Deployment config
+└── README.md
+
+---
+
+## Requirements
+
+* Node.js installed
+* Angular CLI installed
+
+Check versions:
+node --version
+npm --version
+ng version
+
+---
+
+## Setup Instructions
+
+### 1. Clone the repository
+
+git clone https://github.com/velkarthik84-cloud/angular-finance-tracker.git
+cd angular-finance-tracker
+
+### 2. Install dependencies
+
+npm install
+
+### 3. Run development server
+
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open in browser:
+http://localhost:4200
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Build for Production
 
-```bash
-ng generate component component-name
-```
+ng build --configuration production
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Output folder:
+dist/angular-finance-tracker
 
-```bash
-ng generate --help
-```
+---
 
-## Building
 
-To build the project run:
+## How to Use
 
-```bash
-ng build
-```
+### Dashboard
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+* View total income, expenses, and balance
+* See expense distribution by category
 
-## Running unit tests
+### Transactions
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+* Add new transaction
+* Edit existing transaction
+* Delete transaction
+* Form validation ensures correct input
 
-```bash
-ng test
-```
+### Categories
 
-## Running end-to-end tests
+* View and manage categories
+* Used for organizing expenses
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
+## Validation Rules
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+* Title: Required, minimum 2 characters
+* Amount: Required, must be greater than 0
+* Category: Required
+* Date: Required
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Error Handling
+
+* Centralized using HTTP interceptor
+* Displays user-friendly messages for:
+
+  * Network errors
+  * Server errors
+  * Invalid requests
+
+---
+
+
+## Scripts
+
+| Command       | Description            |
+| ------------- | ---------------------- |
+| npm start     | Run development server |
+| npm run build | Build for production   |
+| ng serve      | Start local server     |
+| ng build      | Production build       |
+
+---
+
+## Common Issues
+
+### Build fails
+
+Fix TypeScript errors before deploying
+
+### Page not loading after refresh
+
+Ensure vercel.json is present
+
+### Data disappears
+
+Check localStorage implementation
+
+
